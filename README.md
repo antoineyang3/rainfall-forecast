@@ -1,1 +1,7 @@
 # rainfall-forecast
+
+This repository presents a mini-project about time series. We want to understand how time series could help predicting rainfall in a given place (Melbourne in this study). We propose to decompose the serie into trend, seasonality (of 365 days) and residual. The seasonality can be verified observing a peak at about 365 looking at the autocorrelation of the original serie. A Dickey-Fuller test allows us to verify the stationarity of the residuals. Looking at the autocorrelation of residuals, we propose two different models : MA(3) and AR(12).
+
+We then have to verify these models. Normality tests (Kolmogorov-Smirnov) are not successful, while significativity tests and Box Pierce tests of absence of correlation are successful for both models. The AIC and BIC tests shows the superiority of the AR(12) model, despite high computational cost.
+
+To make prediction, we average rainfall over month to shorten computation. We choose a SARIMA model ((0,0,0), (5,0,0,12)) because it keeps the autoregressivity of the AR model and the yearly seasonality. While it reproduces pretty well the seasonality of monthly rainfall, it fails to reproduce brutal variations of monthly raining. As a conclusion, predicting rainfall on a daily basis seems to be too hard with a time series model as there is a consequent daily variability plus particular events such as anticyclones. However, this kind of model could help predicting the trend of the volume of precipitations in a couple of months horizon.
