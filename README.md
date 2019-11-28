@@ -1,6 +1,6 @@
 # rainfall-forecast
 
-This repository presents a mini-project about time series. We want to understand how time series could help predicting rainfall in a given place (Melbourne in this study). We propose to decompose the serie into trend, seasonality (of 365 days) and residual. The seasonality can be verified observing a peak at about 365 looking at the autocorrelation of the original serie. A Dickey-Fuller test allows us to verify the stationarity of the residuals. Looking at the autocorrelation of residuals, we propose two different models : MA(3) and AR(12).
+This repository presents a mini-project about time series done with Xavier Gantois. We want to understand how time series could help predicting rainfall in a given place (Melbourne in this study). We propose to decompose the serie into trend, seasonality (of 365 days) and residual. The seasonality can be verified observing a peak at about 365 looking at the autocorrelation of the original serie. A Dickey-Fuller test allows us to verify the stationarity of the residuals. Looking at the autocorrelation of residuals, we propose two different models : MA(3) and AR(12).
 
 We then have to verify these models. Normality tests (Kolmogorov-Smirnov) are not successful, while significativity tests and Box Pierce tests of absence of correlation are successful for both models. The AIC and BIC tests shows the superiority of the AR(12) model, despite high computational cost.
 
